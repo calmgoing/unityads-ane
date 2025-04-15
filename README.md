@@ -22,18 +22,47 @@
 
 <!-- 针对Android的权限 -->
 <android>
-    <manifestAdditions><![CDATA[
-        <manifest android:installLocation="auto">
-            <uses-permission android:name="android.permission.INTERNET"/>
-            <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
-            
-            <application>
-                <!-- Unity Ads配置 -->
-                <meta-data android:name="com.google.android.gms.ads.APPLICATION_ID" android:value="YOUR_ADMOB_APP_ID"/>
-            </application>
-        </manifest>
-    ]]></manifestAdditions>
-</android>
+        <manifestAdditions>
+			<![CDATA[
+            <manifest android:installLocation="auto" >
+			<uses-sdk android:minSdkVersion="21" android:targetSdkVersion="34" />
+                <uses-permission android:name="android.permission.INTERNET"/>
+                <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+
+
+                <application android:hardwareAccelerated="true">
+
+                    <meta-data android:name="com.google.android.gms.version" android:value="@integer/google_play_services_version" />
+                    <!-- UNITY ADS -->
+                    <activity
+                        android:name="com.unity3d.services.ads.adunit.AdUnitActivity"
+                        android:configChanges="fontScale|keyboard|keyboardHidden|locale|mnc|mcc|navigation|orientation|screenLayout|screenSize|smallestScreenSize|uiMode|touchscreen"
+                        android:hardwareAccelerated="true"
+                        android:theme="@android:style/Theme.NoTitleBar.Fullscreen" />
+                    <activity
+                        android:name="com.unity3d.services.ads.adunit.AdUnitTransparentActivity"
+                        android:configChanges="fontScale|keyboard|keyboardHidden|locale|mnc|mcc|navigation|orientation|screenLayout|screenSize|smallestScreenSize|uiMode|touchscreen"
+                        android:hardwareAccelerated="true"
+                        android:theme="@android:style/Theme.Translucent.NoTitleBar.Fullscreen" />
+                    <activity
+                        android:name="com.unity3d.services.ads.adunit.AdUnitTransparentSoftwareActivity"
+                        android:configChanges="fontScale|keyboard|keyboardHidden|locale|mnc|mcc|navigation|orientation|screenLayout|screenSize|smallestScreenSize|uiMode|touchscreen"
+                        android:hardwareAccelerated="false"
+                        android:theme="@android:style/Theme.Translucent.NoTitleBar.Fullscreen" />
+                    <activity
+                        android:name="com.unity3d.services.ads.adunit.AdUnitSoftwareActivity"
+                        android:configChanges="fontScale|keyboard|keyboardHidden|locale|mnc|mcc|navigation|orientation|screenLayout|screenSize|smallestScreenSize|uiMode|touchscreen"
+                        android:hardwareAccelerated="false"
+                        android:theme="@android:style/Theme.NoTitleBar.Fullscreen" />
+
+                </application>
+
+
+
+            </manifest>
+        ]]>
+    </manifestAdditions>
+    </android>
 ```
 
 ## 用法
