@@ -1,0 +1,28 @@
+# 编译输出
+bin/
+bin-debug/
+bin-release/
+
+# IDE 文件
+.idea/
+.settings/
+.vscode/
+.DS_Store
+
+# 临时文件
+.tmp/
+.temp/
+temp/
+
+# 依赖
+node_modules/
+bower_components/
+
+# 编译缓存
+*.swf
+*.air
+*.apk
+*.ipa
+
+# 日志文件
+*.log 
